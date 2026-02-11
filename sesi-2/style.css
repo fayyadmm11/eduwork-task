@@ -1,0 +1,251 @@
+/* --- RESET DASAR --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+/* --- TOMBOL (HERO BUTTON) --- */
+/* Default outline */
+.btn {
+    display: inline-block;
+    background-color: white; 
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Hover state (isi penuh) */
+.btn:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- MAIN CONTAINER --- */
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.brand h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+/* Styling Nav Links */
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect Nav Links */
+.nav-links a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    padding: 80px 40px;
+    align-items: center;
+    background-color: #e9f5ff; 
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Update: Styling untuk Gambar Hero */
+.hero-img {
+    width: 100%;
+    height: auto; /* Tinggi menyesuaikan agar tidak gepeng */
+    max-height: 400px; /* Batas tinggi maksimal agar tidak terlalu besar */
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Bayangan lebih dramatis untuk hero */
+}
+
+/* --- SECTIONS --- */
+section {
+    padding: 60px 40px;
+    border-top: 1px solid #eee;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* --- CARD STYLES --- */
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-color: #007bff;
+}
+
+/* --- BIODATA GRID --- */
+.biodata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.bio-card {
+    text-align: center;
+    background-color: #fafafa;
+    justify-content: center;
+}
+
+.bio-card .label {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.bio-card .value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- PORTOFOLIO GRID --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.project-card {
+    text-align: left; /* Teks proyek rata kiri agar lebih rapi */
+    padding: 15px; /* Padding sedikit dikurangi agar gambar lebih dominan */
+}
+
+/* Update: Styling untuk Gambar Proyek */
+.project-img {
+    width: 100%;
+    height: 180px; /* Tinggi tetap agar seragam */
+    object-fit: cover; /* Gambar akan di-crop agar pas di kotak tanpa gepeng */
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin: 0;
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    /* Tambahan agar gambar hero tidak terlalu tinggi di HP */
+    .hero-img {
+        max-height: 250px;
+        margin-top: 20px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
