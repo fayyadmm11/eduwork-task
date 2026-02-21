@@ -1,0 +1,164 @@
+/* --- VARIABEL WARNA CUSTOM --- */
+:root {
+  --primary-teal: #008374; /* Biru-Hijau (Teal) */
+  --primary-teal-hover: #00665b; /* Teal Gelap */
+  --accent-coral: #f25c54; /* Merah/Oren (Coral) - lembut tapi menonjol */
+  --accent-coral-hover: #d94a43; /* Coral Gelap */
+  --bg-light: #f4f7f6; /* Abu-abu sangat muda agak kebiruan */
+  --text-dark: #2b3a42; /* Hitam kebiruan untuk teks */
+}
+
+/* --- TYPOGRAPHY (FONT) --- */
+body {
+  font-family: "Lato", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* --- LAYOUT UTAMA --- */
+.main-container {
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* --- CUSTOM COLORS KELAS --- */
+.text-teal {
+  color: var(--primary-teal) !important;
+}
+.bg-teal {
+  background-color: var(--primary-teal) !important;
+}
+.text-accent {
+  color: var(--accent-coral) !important;
+}
+
+/* --- NAVBAR --- */
+.navbar-nav .nav-link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  padding: 8px 18px !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: var(--primary-teal);
+  color: white !important;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+  background-color: #e6f2f0; /* Versi super pudar dari Biru-Hijau */
+}
+
+/* --- TOMBOL (BUTTONS) --- */
+/* Tombol Aksen (Coral) */
+.btn-accent {
+  background-color: var(--accent-coral);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-accent:hover {
+  background-color: var(--accent-coral-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(242, 92, 84, 0.4);
+}
+
+/* Tombol Outline Teal (Untuk Filter) */
+.btn-outline-teal {
+  color: var(--primary-teal);
+  border: 2px solid var(--primary-teal);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-outline-teal:hover,
+.btn-outline-teal.active {
+  background-color: var(--primary-teal);
+  color: white;
+}
+
+/* --- KARTU (CARDS) --- */
+.info-card {
+  border: none;
+  border-radius: 10px;
+  border-top: 4px solid var(--primary-teal);
+}
+
+.product-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 131, 116, 0.15); /* Bayangan warna teal */
+}
+
+.project-img {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* --- ELEMEN PRODUK --- */
+.harga-produk {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  color: var(--accent-coral);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.kategori-badge {
+  background-color: #e6f2f0;
+  color: var(--primary-teal);
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* --- ANIMASI NAVBAR HIDE/SHOW --- */
+.transition-navbar {
+  transition:
+    transform 0.4s ease-in-out,
+    opacity 0.4s ease-in-out !important;
+}
+
+/* Class ini akan disuntikkan oleh JavaScript saat diam (idle) */
+.navbar-hidden {
+  transform: translateY(-100%); /* Geser penuh ke atas */
+  opacity: 0;
+}
+
+/* --- REVISI JARAK NAVBAR --- */
+.navbar-nav .nav-link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  padding: 10px 20px !important; /* Padding memperbesar background hijau */
+  border-radius: 8px; /* Membuat sudut lebih bulat */
+  transition: all 0.3s ease;
+  color: #666;
+}
