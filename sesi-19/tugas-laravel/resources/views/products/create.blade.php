@@ -65,7 +65,7 @@
                                 class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm px-4 py-2 rounded-md">
                             Simpan
                         </button>
-                        <a href="{{ route('admin.products.index') }}"
+                        <a href="{{ route('products.index') }}"
                            class="bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-4 py-2 rounded-md">
                             Batal
                         </a>
