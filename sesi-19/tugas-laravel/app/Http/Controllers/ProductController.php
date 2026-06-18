@@ -49,4 +49,47 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('success', 'Produk berhasil ditambahkan.');
     }
+
+    public function edit(Product $product)
+    {
+        $categories = ProductCategory::all();
+
+        return view('products.edit', compact('product', 'categories'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $data = $request->validate([
+            'category_id' => 'nullable|exists:categories,id',
+            'name'        => 'required|string|max:200',
+            'price'       => 'required|numeric|min:0',
+            'description' => 'nullable|string',
+            'stock'       => 'required|integer|min:0',
+            'image'       => 'nullable|image|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($product->image) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($product->image);
+            }
+            $data['image'] = $request->file('image')->store('products', 'public');
+        } else {
+            unset($data['image']);
+        }
+
+        $product->update($data);
+
+        return redirect()->route('products.index')->with('success', 'Produk berhasil diperbarui.');
+    }
+
+    public function destroy(Product $product)
+    {
+        if ($product->image) {
+            \Illuminate\Support\Facades\Storage::disk('public')->delete($product->image);
+        }
+
+        $product->delete();
+
+        return redirect()->route('products.index')->with('success', 'Produk berhasil dihapus.');
+    }
 }
